@@ -1,0 +1,34 @@
+.example-container {
+    width: 500px;
+    height: -webkit-fill-available;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: auto!important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: steelblue;
+}
+
+.example-sidenav {
+    padding: 20px;
+    width: 240px;
+}
+
+.mat-drawer-container {
+    background:none!important;
+    color: #fff;
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 20px;
+}
