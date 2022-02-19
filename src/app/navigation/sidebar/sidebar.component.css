@@ -1,6 +1,13 @@
 .example-container {
-    width: 250px;
     height: -webkit-fill-available;
+}
+
+mat-drawer {
+    background: #252529;
+}
+
+mat-drawer * {
+    color: white;
 }
 
 .example-sidenav-content {
@@ -8,7 +15,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: #424242;
+    background-color: #252529;
 }
 
 .example-sidenav {
@@ -45,6 +52,10 @@ svg {
 }
 
 .mat-toolbar {
-    background: #424242;
+    background: #252529;
     color: #fff;
+}
+
+mat-drawer-container {
+    z-index: 10;
 }

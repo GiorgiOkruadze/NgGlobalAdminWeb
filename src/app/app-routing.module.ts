@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCarComponent } from './views/car-pg/add-car/add-car.component';
 import { CarPgComponent } from './views/car-pg/car-pg.component';
+import { UpdateCardComponent } from './views/car-pg/update-card/update-card.component';
+import { UploadCarImageComponent } from './views/car-pg/upload-car-image/upload-car-image.component';
 import { CompanyInfoPgComponent } from './views/company-info-pg/company-info-pg.component';
 import { CompanyServicePgComponent } from './views/company-service-pg/company-service-pg.component';
 import { ContractPgComponent } from './views/contract-pg/contract-pg.component';
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'company-services', component: CompanyServicePgComponent },
   { path: 'company-infos', component: CompanyInfoPgComponent },
   { path: 'cars', component: CarPgComponent },
+  { path: 'cars/add-new', component: AddCarComponent },
+  { path: 'cars/upload-image/:carId', component: UploadCarImageComponent },
+  { path: 'cars/update/:carId', component: UpdateCardComponent },
   { path: 'mails', component: MailPgComponent }
 ];
 

@@ -1,0 +1,65 @@
+.car-image {
+    width:270px;
+    height: 200px;
+    object-fit: cover;
+    margin:10px 20px 10px 0px;
+}
+.images-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type='file']{
+    display: none;
+}
+
+.image-box {
+    position: relative
+}
+
+.image-box .set-as-main {
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    top: 20px;
+    width:30px;
+    height: 30px;
+}
+
+.image-box .delete {
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    top: 20px;
+    width:30px;
+    height: 30px;
+}
+
+.image-box .delete i {
+    font-size: 12px;
+}
+
+.mat-fab {
+    padding: 0px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0px!important;
+}
+
+article:first-child {
+    margin-bottom: 50px;
+    width:300px;
+}
+
+.form-field-group {
+    width: 100%;
+}
+
+.upload-image {
+    width: 100%!important;
+}
+
+mat-form-field {
+    width:100%
+}

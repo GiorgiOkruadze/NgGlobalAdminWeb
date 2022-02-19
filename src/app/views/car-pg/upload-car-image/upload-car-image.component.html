@@ -1,0 +1,21 @@
+<section class="p-5">
+    <article>
+        <input (change)="onUploadInpChange($event)" #uploadImage type="file">
+        <button (click)="onUploadImageBtnClick(uploadImage)" class="upload-image" mat-raised-button
+            color="primary">Upload Image</button>
+    </article>
+
+    <article *ngIf="currentCar!=undefined" class="images-area">
+        <div *ngFor="let item of currentCar.images" class="image-box">
+            <img mat-card-md-image class="car-image" [src]="item.imageName" alt="Photo of a Shiba Inu">
+            <button 
+            (click)="onSetAsMainImageBtnClick(item.id)"
+            *ngIf="!item.isMainImage" mat-fab color="primary" class="set-as-main">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+            <button mat-fab color="warn" class="delete">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+    </article>
+</section>

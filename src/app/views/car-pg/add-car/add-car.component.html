@@ -1,0 +1,78 @@
+<section class="p-5">
+    <h1>All New Car</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>manufacturer</mat-label>
+                <input ngModel name="manufacturer" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>model</mat-label>
+                <input ngModel name="model" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>Year</mat-label>
+                <input ngModel name="year" matInput type="datetime-local">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>vinCode</mat-label>
+                <input ngModel name="vinCode" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>price</mat-label>
+                <input ngModel name="price" matInput type="number">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>mile</mat-label>
+                <input ngModel name="mile" matInput type="number">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>seller phone number</mat-label>
+                <input ngModel name="sellerPhoneNumber" matInput type="tel">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>arrives in</mat-label>
+                <input ngModel name="arrivesIn" matInput type="datetime-local">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>drive train Geo</mat-label>
+                <input ngModel name="driveTrainGeo" matInput type="text">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>drive train Eng</mat-label>
+                <input ngModel name="driveTrainEng" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>fuel type Geo</mat-label>
+                <input ngModel name="fuelTypeGeo" matInput type="text">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>fuel type Eng</mat-label>
+                <input ngModel name="fuelTypeEng" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>transmission Geo</mat-label>
+                <input ngModel name="transmissionGeo" matInput type="text">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>transmission Eng</mat-label>
+                <input ngModel name="transmissionEng" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <button mat-raised-button class="add-car" color="primary">Save</button>
+        </div>
+    </form>
+</section>
