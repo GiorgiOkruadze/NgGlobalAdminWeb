@@ -1,15 +1,14 @@
 .example-container {
-    width: 500px;
+    width: 250px;
     height: -webkit-fill-available;
 }
 
 .example-sidenav-content {
     display: flex;
-    height: auto!important;
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: steelblue;
+    background-color: #424242;
 }
 
 .example-sidenav {
@@ -18,17 +17,34 @@
 }
 
 .mat-drawer-container {
-    background:none!important;
+    background: none !important;
     color: #fff;
+    position: absolute;
 }
 
 .example-sidenav-content {
     display: flex;
     height: 100%;
-    align-items: center;
+    width: 40px;
+    align-items: flex-start;
     justify-content: center;
 }
 
 .example-sidenav {
     padding: 20px;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background: #424242;
+    color: #fff;
 }

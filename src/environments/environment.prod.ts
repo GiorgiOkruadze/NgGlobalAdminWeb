@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  serverApiUrl:'https://ngglobalwebapi20220214181318.azurewebsites.net'
 };

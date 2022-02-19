@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+}
+
+.mat-header-cell,.mat-cell, .mat-footer-cell {
+    color: rgb(30,30,30);
+}
+
+.mat-table {
+    background: #fff;
+}
+
+td.mat-cell, td.mat-footer-cell,th.mat-header-cell {
+    border-bottom-color: rgb(57 57 57 / 24%);
+}
+
+tr.mat-row, tr.mat-footer-row {
+    height: 70px;
+}
+
+.car-image {
+    width:70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.warning{
+    background-color: #FFCA2C;
+}
