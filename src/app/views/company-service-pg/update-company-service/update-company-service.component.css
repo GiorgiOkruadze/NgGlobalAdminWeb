@@ -1,0 +1,57 @@
+.form-field-group {
+    width:300px;
+}
+
+.inline-form-field-group {
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-field-group {
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inline-form-field-group mat-form-field {
+    width:49%!important;
+}
+
+mat-label {
+    text-transform: capitalize;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.add-car {
+    width:100%;
+    padding:3px 0px;
+}
+
+.example-form {
+    width: 500px;
+}
+
+.example-form img {
+    width: 100%;
+}
+
+.example-form button {
+    width: 100%;
+}
+
+.example-form .upload-image {
+    margin:0px 0px 20px;
+}
+
+.images-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type='file']{
+    display: none;
+}

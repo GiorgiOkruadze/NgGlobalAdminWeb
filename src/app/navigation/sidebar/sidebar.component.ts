@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  showFiller:boolean = false;
+  showFiller: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onLogOutBtnClick() {
+    localStorage['logInUser'] = undefined;
+    window.location.reload();
+  }
 }

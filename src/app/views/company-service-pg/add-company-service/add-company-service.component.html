@@ -1,0 +1,56 @@
+<section class="p-5">
+    <h1>Add new Company Service</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <img
+        *ngIf="imageBase64Link != null"
+        mat-card-md-image
+        [src]="imageBase64Link"
+      />
+      <article class="upload-image">
+        <input (change)="onUploadInpChange($event)" #uploadImage type="file" />
+        <button
+          (click)="onUploadImageBtnClick(uploadImage)"
+          class="upload-image"
+          mat-raised-button
+          color="primary"
+          type="button"
+        >
+          Upload Image
+        </button>
+      </article>
+      <div class="inline-form-field-group">
+        <mat-form-field appearance="fill">
+          <mat-label>title Geo</mat-label>
+          <input ngModel name="titleGeo" matInput type="text" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>title Eng</mat-label>
+          <input ngModel name="titleEng" matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field-group">
+        <mat-form-field appearance="fill">
+          <mat-label>shortDesc Geo</mat-label>
+          <input ngModel name="shortDescGeo" matInput type="text" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>shortDesc Eng</mat-label>
+          <input ngModel name="shortDescEng" matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field-group">
+        <mat-form-field appearance="fill">
+          <mat-label>longDesc Geo</mat-label>
+          <input ngModel name="longDescGeo" matInput type="text" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>longDesc Eng</mat-label>
+          <input ngModel name="longDescEng" matInput type="text" />
+        </mat-form-field>
+      </div>
+      <div class="inline-form-field-group">
+        <button mat-raised-button class="add-car" color="primary">Save</button>
+      </div>
+    </form>
+  </section>
+  

@@ -59,3 +59,7 @@ svg {
 mat-drawer-container {
     z-index: 10;
 }
+
+.fa-arrow-right-from-bracket {
+    margin-left: 10px;
+}

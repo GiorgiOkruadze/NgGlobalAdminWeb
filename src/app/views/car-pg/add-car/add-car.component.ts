@@ -46,7 +46,7 @@ export class AddCarComponent implements OnInit {
     console.log(car);
     this.carProxy.addNewCar(car).subscribe((response:any) => {
       if(response){
-        this.router.navigate(["/cars"]);
+        this.router.navigate(["/"]);
       }
     })
   }

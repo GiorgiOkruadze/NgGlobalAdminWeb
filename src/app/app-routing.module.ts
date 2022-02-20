@@ -7,7 +7,9 @@ import { UploadCarImageComponent } from './views/car-pg/upload-car-image/upload-
 import { AddCompanyInfoComponent } from './views/company-info-pg/add-company-info/add-company-info.component';
 import { CompanyInfoPgComponent } from './views/company-info-pg/company-info-pg.component';
 import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-company-info/update-company-info.component';
+import { AddCompanyServiceComponent } from './views/company-service-pg/add-company-service/add-company-service.component';
 import { CompanyServicePgComponent } from './views/company-service-pg/company-service-pg.component';
+import { UpdateCompanyServiceComponent } from './views/company-service-pg/update-company-service/update-company-service.component';
 import { ContractPgComponent } from './views/contract-pg/contract-pg.component';
 import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dataset/add-daily-dataset.component';
 import { DailyDatasetPgComponent } from './views/daily-dataset-pg/daily-dataset-pg.component';
@@ -17,15 +19,19 @@ import { UserPgComponent } from './views/user-pg/user-pg.component';
 
 const routes: Routes = [
   { path: 'contracts', component: ContractPgComponent },
+  { path: 'contracts/add-new', component: ContractPgComponent },
+  { path: 'contracts/update-new/:contractId', component: ContractPgComponent },
   { path: 'users', component: UserPgComponent },
   { path: 'daily-datasets', component: DailyDatasetPgComponent },
   { path: 'daily-datasets/add-new', component: AddDailyDatasetComponent },
   { path: 'daily-datasets/update-new/:dailyDatasetId', component: UpdateDailyDatasetComponent },
   { path: 'company-services', component: CompanyServicePgComponent },
+  { path: 'company-services/add-new', component: AddCompanyServiceComponent },
+  { path: 'company-services/update-new/:companyServiceId', component: UpdateCompanyServiceComponent },
   { path: 'company-infos', component: CompanyInfoPgComponent },
   { path: 'company-infos/add-new', component: AddCompanyInfoComponent },
   { path: 'company-infos/update/:infoId', component: UpdateCompanyInfoComponent },
-  { path: 'cars', component: CarPgComponent },
+  { path: '', component: CarPgComponent },
   { path: 'cars/add-new', component: AddCarComponent },
   { path: 'cars/upload-image/:carId', component: UploadCarImageComponent },
   { path: 'cars/update/:carId', component: UpdateCarComponent },

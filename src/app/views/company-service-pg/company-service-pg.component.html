@@ -1,1 +1,38 @@
-<p>company-service-pg works!</p>
+<section class="p-5">
+    <h1>All Company Services</h1>
+    <a mat-raised-button class="add-new-car" color="primary" routerLink="/company-services/add-new">Add Company services</a>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef><b> Image </b></th>
+            <td mat-cell *matCellDef="let element">
+                <img class="car-image" [src]="element.imageName" alt="">
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef><b> title </b></th>
+            <td mat-cell *matCellDef="let element"> {{getTrText(1,element.titleTranslations)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="shortDescription">
+            <th mat-header-cell *matHeaderCellDef><b> short Description </b></th>
+            <td mat-cell *matCellDef="let element"> {{getTrText(1,element.shortDescriptionTranslations)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="longDescription">
+            <th mat-header-cell *matHeaderCellDef><b> long Description </b></th>
+            <td mat-cell *matCellDef="let element"> {{getTrText(1,element.longDescriptionTranslations)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef><b> Update </b></th>
+            <td mat-cell *matCellDef="let element">
+                <a routerLink="/company-services/update-new/{{element.id}}" class="warning" mat-raised-button>Update</a>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef><b> Delete </b></th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="onDeleteCompanyServiceBtnClick(element.id)" mat-raised-button color="warn">Delete</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</section>

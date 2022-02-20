@@ -78,7 +78,7 @@ export class UpdateCarComponent implements OnInit {
     console.log(car);
     this.carProxy.updateNewCar(car).subscribe((response: any) => {
       if (response) {
-        this.router.navigate(["/cars"]);
+        this.router.navigate(["/"]);
       }
     })
   }

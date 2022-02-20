@@ -1,0 +1,46 @@
+<section class="p-5" *ngIf="currentCompanyService!=null && formTranslationModel!= null">
+    <h1>Add new Daily Dataset</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <img *ngIf="imageBase64Link != null" mat-card-md-image [src]="imageBase64Link" />
+        <article class="upload-image">
+            <input (change)="onUploadInpChange($event)" #uploadImage type="file" />
+            <button (click)="onUploadImageBtnClick(uploadImage)" class="upload-image" mat-raised-button color="primary"
+                type="button">
+                Upload Image
+            </button>
+        </article>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>title Geo</mat-label>
+                <input [(ngModel)]="formTranslationModel.titleGeo" name="titleGeo" matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>title Eng</mat-label>
+                <input [(ngModel)]="formTranslationModel.titleEng" name="titleEng" matInput type="text" />
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>shortDesc Geo</mat-label>
+                <input [(ngModel)]="formTranslationModel.shortDescGeo" name="shortDescGeo" matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>shortDesc Eng</mat-label>
+                <input [(ngModel)]="formTranslationModel.shortDescEng" name="shortDescEng" matInput type="text" />
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>longDesc Geo</mat-label>
+                <input [(ngModel)]="formTranslationModel.longDescGeo" name="longDescGeo" matInput type="text" />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>longDesc Eng</mat-label>
+                <input [(ngModel)]="formTranslationModel.longDescEng" name="longDescEng" matInput type="text" />
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <button mat-raised-button class="add-car" color="primary">Save</button>
+        </div>
+    </form>
+</section>

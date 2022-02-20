@@ -4,14 +4,14 @@
     </button>
     <span>NgGlobal</span>
     <span class="example-spacer"></span>
-
+    <button (click)="onLogOutBtnClick()" mat-button>Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-list role="list">
             <mat-list-item role="listitem">
-                <a mat-button routerLink="/cars">Cars</a>
+                <a mat-button routerLink="/">Cars</a>
             </mat-list-item>
             <mat-list-item role="listitem">
                 <a mat-button routerLink="/company-infos">Company Infos</a>

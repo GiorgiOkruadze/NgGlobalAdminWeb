@@ -29,6 +29,10 @@ import { AddCompanyInfoComponent } from './views/company-info-pg/add-company-inf
 import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-company-info/update-company-info.component';
 import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dataset/add-daily-dataset.component';
 import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-daily-dataset/update-daily-dataset.component';
+import { AddCompanyServiceComponent } from './views/company-service-pg/add-company-service/add-company-service.component';
+import { UpdateCompanyServiceComponent } from './views/company-service-pg/update-company-service/update-company-service.component';
+import { AddContractComponent } from './views/contract-pg/add-contract/add-contract.component';
+import { UpdateContractComponent } from './views/contract-pg/update-contract/update-contract.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,11 @@ import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-dai
     AddCompanyInfoComponent,
     UpdateCompanyInfoComponent,
     AddDailyDatasetComponent,
-    UpdateDailyDatasetComponent
+    UpdateDailyDatasetComponent,
+    AddCompanyServiceComponent,
+    UpdateCompanyServiceComponent,
+    AddContractComponent,
+    UpdateContractComponent
   ],
   imports: [
     BrowserModule,
