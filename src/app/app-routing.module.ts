@@ -9,7 +9,9 @@ import { CompanyInfoPgComponent } from './views/company-info-pg/company-info-pg.
 import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-company-info/update-company-info.component';
 import { CompanyServicePgComponent } from './views/company-service-pg/company-service-pg.component';
 import { ContractPgComponent } from './views/contract-pg/contract-pg.component';
+import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dataset/add-daily-dataset.component';
 import { DailyDatasetPgComponent } from './views/daily-dataset-pg/daily-dataset-pg.component';
+import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-daily-dataset/update-daily-dataset.component';
 import { MailPgComponent } from './views/mail-pg/mail-pg.component';
 import { UserPgComponent } from './views/user-pg/user-pg.component';
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'contracts', component: ContractPgComponent },
   { path: 'users', component: UserPgComponent },
   { path: 'daily-datasets', component: DailyDatasetPgComponent },
+  { path: 'daily-datasets/add-new', component: AddDailyDatasetComponent },
+  { path: 'daily-datasets/update-new/:dailyDatasetId', component: UpdateDailyDatasetComponent },
   { path: 'company-services', component: CompanyServicePgComponent },
   { path: 'company-infos', component: CompanyInfoPgComponent },
   { path: 'company-infos/add-new', component: AddCompanyInfoComponent },

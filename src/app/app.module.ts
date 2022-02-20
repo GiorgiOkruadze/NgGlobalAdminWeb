@@ -27,6 +27,8 @@ import { HttpInterceptorService } from './interceptors/http-interceptor.service'
 import { LoadingComponent } from './shared-components/loading/loading.component';
 import { AddCompanyInfoComponent } from './views/company-info-pg/add-company-info/add-company-info.component';
 import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-company-info/update-company-info.component';
+import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dataset/add-daily-dataset.component';
+import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-daily-dataset/update-daily-dataset.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-compa
     UpdateCarComponent,
     LoadingComponent,
     AddCompanyInfoComponent,
-    UpdateCompanyInfoComponent
+    UpdateCompanyInfoComponent,
+    AddDailyDatasetComponent,
+    UpdateDailyDatasetComponent
   ],
   imports: [
     BrowserModule,
