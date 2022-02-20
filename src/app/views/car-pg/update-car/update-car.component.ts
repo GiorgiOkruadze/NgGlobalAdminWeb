@@ -6,11 +6,11 @@ import { Translation } from 'src/app/models/translation.model';
 import { CarProxyService } from 'src/app/services/car-proxy.service';
 
 @Component({
-  selector: 'app-update-card',
-  templateUrl: './update-card.component.html',
-  styleUrls: ['./update-card.component.css']
+  selector: 'app-update-car',
+  templateUrl: './update-car.component.html',
+  styleUrls: ['./update-car.component.css']
 })
-export class UpdateCardComponent implements OnInit {
+export class UpdateCarComponent implements OnInit {
   currentCarId!:number;
   currentCar!: any;
   formTranslationModel!:any;

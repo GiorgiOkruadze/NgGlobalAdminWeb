@@ -1,1 +1,46 @@
-<p>company-info-pg works!</p>
+<section class="p-5">
+    <h1>All Company Infos</h1>
+    <a mat-raised-button class="add-new-car" color="primary" routerLink="/company-infos/add-new">Add Company info</a>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef><b> email </b></th>
+            <td mat-cell *matCellDef="let element">{{element.email}}</td>
+        </ng-container>
+        <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell *matHeaderCellDef><b> PhoneNumber </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+        </ng-container>
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef><b> address </b></th>
+            <td mat-cell *matCellDef="let element"> {{getTrText(element.addressTranslations,1)}} </td>
+        </ng-container>
+        <ng-container matColumnDef="viber">
+            <th mat-header-cell *matHeaderCellDef><b> viber </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.viber}} </td>
+        </ng-container>
+        <ng-container matColumnDef="facebook">
+            <th mat-header-cell *matHeaderCellDef><b> facebook </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.facebook}} </td>
+        </ng-container>
+        <ng-container matColumnDef="whatsApp">
+            <th mat-header-cell *matHeaderCellDef><b> whatsApp </b></th>
+            <td mat-cell *matCellDef="let element"> {{ element.whatsApp }} </td>
+        </ng-container>
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef><b> Update </b></th>
+            <td mat-cell *matCellDef="let element">
+                <a routerLink="/company-infos/update/{{element.id}}" class="warning" mat-raised-button>Update</a>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef><b> Delete </b></th>
+            <td mat-cell *matCellDef="let element">
+                <button 
+                (click)="onDeleteInfoBtnClick(element.id)"
+                mat-raised-button color="warn">Delete</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</section>

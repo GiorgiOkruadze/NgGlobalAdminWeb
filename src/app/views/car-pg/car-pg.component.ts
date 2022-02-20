@@ -19,7 +19,6 @@ export class CarPgComponent implements OnInit {
   getAllCars() {
     this.carProxy.getAllCars().subscribe((response: any) => {
       this.dataSource = response;
-      console.log(this.dataSource)
     });
   }
 

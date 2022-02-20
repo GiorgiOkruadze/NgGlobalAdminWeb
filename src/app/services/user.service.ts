@@ -15,7 +15,6 @@ export class UserService {
 
   constructor(private store: Store<{ user: LogInUser }>, private httpClient:HttpClient) {
     store.pipe(select('users' as any)).subscribe((value: any) => {
-      console.log(value); ''
       if (value != null) {
         UserService.logInUser = value;
       } else if(localStorage['logInUser'] != undefined){

@@ -1,0 +1,44 @@
+<section class="p-5">
+    <h1>Add new company info</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>email</mat-label>
+                <input ngModel name="email" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>viber</mat-label>
+                <input ngModel name="viber" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>phoneNumber</mat-label>
+                <input ngModel name="phoneNumber" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>whatsApp</mat-label>
+                <input ngModel name="whatsApp" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>facebook</mat-label>
+                <input ngModel name="facebook" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>address Geo</mat-label>
+                <input ngModel name="addressGeo" matInput type="text">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>address Eng</mat-label>
+                <input ngModel name="addressEng" matInput type="text">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <button mat-raised-button class="add-car" color="primary">Save</button>
+        </div>
+    </form>
+</section>

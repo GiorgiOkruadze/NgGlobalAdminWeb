@@ -22,9 +22,11 @@ import { LogInComponent } from './views/log-in/log-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCarComponent } from './views/car-pg/add-car/add-car.component';
 import { UploadCarImageComponent } from './views/car-pg/upload-car-image/upload-car-image.component';
-import { UpdateCardComponent } from './views/car-pg/update-card/update-card.component';
+import { UpdateCarComponent } from './views/car-pg/update-car/update-car.component';
 import { HttpInterceptorService } from './interceptors/http-interceptor.service';
 import { LoadingComponent } from './shared-components/loading/loading.component';
+import { AddCompanyInfoComponent } from './views/company-info-pg/add-company-info/add-company-info.component';
+import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-company-info/update-company-info.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,10 @@ import { LoadingComponent } from './shared-components/loading/loading.component'
     LogInComponent,
     AddCarComponent,
     UploadCarImageComponent,
-    UpdateCardComponent,
-    LoadingComponent
+    UpdateCarComponent,
+    LoadingComponent,
+    AddCompanyInfoComponent,
+    UpdateCompanyInfoComponent
   ],
   imports: [
     BrowserModule,
