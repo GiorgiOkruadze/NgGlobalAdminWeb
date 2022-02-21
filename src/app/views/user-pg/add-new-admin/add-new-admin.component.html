@@ -1,0 +1,24 @@
+<section class="p-5">
+    <h1>Add new company info</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <div class="form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>email</mat-label>
+                <input ngModel name="email" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>userName</mat-label>
+                <input ngModel name="userName" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>password</mat-label>
+                <input ngModel name="password" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <button mat-raised-button class="add-car" color="primary">Save</button>
+        </div>
+    </form>
+</section>

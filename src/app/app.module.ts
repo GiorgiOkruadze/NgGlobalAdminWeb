@@ -33,6 +33,7 @@ import { AddCompanyServiceComponent } from './views/company-service-pg/add-compa
 import { UpdateCompanyServiceComponent } from './views/company-service-pg/update-company-service/update-company-service.component';
 import { AddContractComponent } from './views/contract-pg/add-contract/add-contract.component';
 import { UpdateContractComponent } from './views/contract-pg/update-contract/update-contract.component';
+import { AddNewAdminComponent } from './views/user-pg/add-new-admin/add-new-admin.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { UpdateContractComponent } from './views/contract-pg/update-contract/upd
     AddCompanyServiceComponent,
     UpdateCompanyServiceComponent,
     AddContractComponent,
-    UpdateContractComponent
+    UpdateContractComponent,
+    AddNewAdminComponent
   ],
   imports: [
     BrowserModule,

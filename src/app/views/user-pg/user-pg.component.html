@@ -1,1 +1,32 @@
-<p>user-pg works!</p>
+<section class="p-5">
+    <h1>All Admins</h1>
+    <a mat-raised-button class="add-new-car" color="primary" routerLink="/admins/add-new">Add new Admin</a>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="userName">
+            <th mat-header-cell *matHeaderCellDef><b> userName </b></th>
+            <td mat-cell *matCellDef="let element">{{element.userName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef><b> email </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="carCount">
+            <th mat-header-cell *matHeaderCellDef><b> carCount</b></th>
+            <td mat-cell *matCellDef="let element"> {{element.cars.length}} </td>
+        </ng-container>
+        <ng-container matColumnDef="contractCount">
+            <th mat-header-cell *matHeaderCellDef><b> contractCount </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.contracts.length}} </td>
+        </ng-container>
+        <ng-container matColumnDef="deactivate">
+            <th mat-header-cell *matHeaderCellDef><b> deactivate </b></th>
+            <td mat-cell *matCellDef="let element">
+                <button 
+                (click)="onDeactivateBtnClick(element.id)"
+                mat-raised-button color="warn">Deactivate</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</section>

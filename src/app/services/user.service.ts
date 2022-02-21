@@ -44,4 +44,20 @@ export class UserService {
       return data;
     }));
   }
+
+  getAllAdmins():any {
+    var jwt: string = UserService.logInUser.jwt;
+    let headers = new HttpHeaders({'content-type':'application/json'})
+    .set('Authorization', `Bearer ${jwt}`);
+    let fullApiUrl: string = `${environment.serverApiUrl}/api/user/getAllAdmins`;
+    return this.httpClient.get(fullApiUrl, {headers:headers});
+  }
+
+  registerAdmin(admin:any):any {
+    var jwt: string = UserService.logInUser.jwt;
+    let headers = new HttpHeaders({'content-type':'application/json'})
+    .set('Authorization', `Bearer ${jwt}`);
+    let fullApiUrl: string = `${environment.serverApiUrl}/api/user/registerAdmin`;
+    return this.httpClient.post(fullApiUrl, admin,{headers:headers});
+  }
 }

@@ -15,13 +15,15 @@ import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dat
 import { DailyDatasetPgComponent } from './views/daily-dataset-pg/daily-dataset-pg.component';
 import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-daily-dataset/update-daily-dataset.component';
 import { MailPgComponent } from './views/mail-pg/mail-pg.component';
+import { AddNewAdminComponent } from './views/user-pg/add-new-admin/add-new-admin.component';
 import { UserPgComponent } from './views/user-pg/user-pg.component';
 
 const routes: Routes = [
   { path: 'contracts', component: ContractPgComponent },
   { path: 'contracts/add-new', component: ContractPgComponent },
   { path: 'contracts/update-new/:contractId', component: ContractPgComponent },
-  { path: 'users', component: UserPgComponent },
+  { path: 'admins', component: UserPgComponent },
+  { path: 'admins/add-new', component: AddNewAdminComponent },
   { path: 'daily-datasets', component: DailyDatasetPgComponent },
   { path: 'daily-datasets/add-new', component: AddDailyDatasetComponent },
   { path: 'daily-datasets/update-new/:dailyDatasetId', component: UpdateDailyDatasetComponent },
