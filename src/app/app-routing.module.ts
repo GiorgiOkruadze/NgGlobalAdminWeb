@@ -10,18 +10,21 @@ import { UpdateCompanyInfoComponent } from './views/company-info-pg/update-compa
 import { AddCompanyServiceComponent } from './views/company-service-pg/add-company-service/add-company-service.component';
 import { CompanyServicePgComponent } from './views/company-service-pg/company-service-pg.component';
 import { UpdateCompanyServiceComponent } from './views/company-service-pg/update-company-service/update-company-service.component';
+import { AddContractComponent } from './views/contract-pg/add-contract/add-contract.component';
 import { ContractPgComponent } from './views/contract-pg/contract-pg.component';
+import { UpdateContractComponent } from './views/contract-pg/update-contract/update-contract.component';
 import { AddDailyDatasetComponent } from './views/daily-dataset-pg/add-daily-dataset/add-daily-dataset.component';
 import { DailyDatasetPgComponent } from './views/daily-dataset-pg/daily-dataset-pg.component';
 import { UpdateDailyDatasetComponent } from './views/daily-dataset-pg/update-daily-dataset/update-daily-dataset.component';
+import { LogInComponent } from './views/log-in/log-in.component';
 import { MailPgComponent } from './views/mail-pg/mail-pg.component';
 import { AddNewAdminComponent } from './views/user-pg/add-new-admin/add-new-admin.component';
 import { UserPgComponent } from './views/user-pg/user-pg.component';
 
 const routes: Routes = [
   { path: 'contracts', component: ContractPgComponent },
-  { path: 'contracts/add-new', component: ContractPgComponent },
-  { path: 'contracts/update-new/:contractId', component: ContractPgComponent },
+  { path: 'contracts/add-new', component: AddContractComponent },
+  { path: 'contracts/update-new/:contractId', component: UpdateContractComponent },
   { path: 'admins', component: UserPgComponent },
   { path: 'admins/add-new', component: AddNewAdminComponent },
   { path: 'daily-datasets', component: DailyDatasetPgComponent },
@@ -37,11 +40,12 @@ const routes: Routes = [
   { path: 'cars/add-new', component: AddCarComponent },
   { path: 'cars/upload-image/:carId', component: UploadCarImageComponent },
   { path: 'cars/update/:carId', component: UpdateCarComponent },
-  { path: 'mails', component: MailPgComponent }
+  //{ path: 'mails', component: MailPgComponent },
+  { path: 'sign-in', component: LogInComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

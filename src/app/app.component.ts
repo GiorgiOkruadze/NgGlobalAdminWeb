@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   constructor(private userService:UserService,private _loading: LoadingService){
     this.userService.getUserStore().subscribe((value:any)=>{
       this.logInUser = value;
+      console.log(this.logInUser);
     })
   }
   

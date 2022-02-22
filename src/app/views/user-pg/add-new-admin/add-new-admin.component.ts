@@ -16,8 +16,8 @@ export class AddNewAdminComponent implements OnInit {
 
   onSubmit(form:NgForm){
     this.userService.registerAdmin(form.value).subscribe((response:any) => {
-      if(response){
-        this.router.navigate(["/users"]);
+      if(response>0){
+        this.router.navigate(["/admins"]);
       }
     })
   }

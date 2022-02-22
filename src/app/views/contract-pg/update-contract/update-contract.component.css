@@ -1,0 +1,36 @@
+.form-field-group {
+    width:300px;
+}
+
+.inline-form-field-group {
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inline-form-field-group mat-form-field {
+    width:49%!important;
+}
+
+mat-label {
+    text-transform: capitalize;
+}
+
+.d-none {
+    display: none;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.add-car {
+    width:100%;
+    padding:3px 0px;
+}
+
+.form-field-group {
+    width:800px;
+    display: flex;
+    justify-content: space-between;
+}

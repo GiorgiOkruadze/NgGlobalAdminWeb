@@ -7,7 +7,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-pg.component.css']
 })
 export class UserPgComponent implements OnInit {
-  displayedColumns: string[] = ['userName', 'email', 'carCount', 'contractCount',"deactivate"];
+  displayedColumns: string[] = ['userName', 'email', 'carCount', 'contractCount',"UserStatus"];
   dataSource: [] = [];
 
   constructor(private userService: UserService) { }
@@ -31,8 +31,11 @@ export class UserPgComponent implements OnInit {
     return currentTr.text;
   }
 
-  onDeactivateBtnClick(adminId: any) {
-    
+  onUserStatusChange(adminEmail: any) {
+    this.userService.changeUserStatus(adminEmail).subscribe((response:any) => {
+      if(response){
+        this.getAllAdmins();
+      }
+    })
   }
-
 }

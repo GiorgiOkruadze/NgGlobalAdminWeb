@@ -1,1 +1,69 @@
-<p>update-contract works!</p>
+<section class="p-5" *ngIf="currentContract!=null">
+    <h1>Update Contract</h1>
+    <form class="example-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <input class="d-none" type="number" [(ngModel)]="currentContract.id" name="id"> 
+        <div class="form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>year</mat-label>
+                <input [(ngModel)]="currentContract.year" name="year" matInput type="datetime-local">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>enter user email</mat-label>
+                <input (input)="onSelectUserByEmailInpChange($event)" [(ngModel)]="currentContract.email" type="email" name="userEmail" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Select user</mat-label>
+                <mat-select [(ngModel)]="currentContract.userId" name="userId" [disabled]="usersWithSameEmail.length == 0">
+                    <mat-option 
+                    *ngFor="let item of usersWithSameEmail"
+                    [value]="item.id">{{item.email}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>VIN Code</mat-label>
+                <input [(ngModel)]="currentContract.vinCode" name="vinCode" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>price</mat-label>
+                <input [(ngModel)]="currentContract.price" name="price" matInput type="number">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>amount Paid</mat-label>
+                <input [(ngModel)]="currentContract.amountPaid" name="amountPaid" matInput type="number">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>amount To Be Paid</mat-label>
+                <input [(ngModel)]="currentContract.amountToBePaid" name="amountToBePaid" matInput type="number">
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>purchase</mat-label>
+                <input [(ngModel)]="currentContract.purchase" name="purchase" matInput type="datetime-local">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>container</mat-label>
+                <input [(ngModel)]="currentContract.container" name="container" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <mat-form-field appearance="fill">
+                <mat-label>car Manufacture</mat-label>
+                <input [(ngModel)]="currentContract.carManufacture" name="carManufacture" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>carModel</mat-label>
+                <input [(ngModel)]="currentContract.carModel" name="carModel" matInput>
+            </mat-form-field>
+        </div>
+        <div class="inline-form-field-group">
+            <button mat-raised-button class="add-car" color="primary">Save</button>
+        </div>
+    </form>
+</section>
