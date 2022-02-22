@@ -29,28 +29,29 @@ export class UpdateCarComponent implements OnInit {
     })
   }
 
-  public getTrText(translations: [], languageId: any): any {
+  public getTr(translations: [], languageId: any): any {
     var currentTr:any =  translations.find((o:any) => o.languageId == languageId);
     
     if(currentTr==null)
       return "";
 
-    return currentTr.text;
+    return currentTr;
   }
 
   
   public generateFormTranslationModel(car:any): any {
     this.formTranslationModel = {
-      driveTrainGeo:this.getTrText(car.driveTrainTranslations,2),
-      driveTrainEng:this.getTrText(car.driveTrainTranslations,1),
-      fuelTypeGeo:this.getTrText(car.fuelTypeTranslations,2),
-      fuelTypeEng:this.getTrText(car.fuelTypeTranslations,1),
-      transmissionGeo:this.getTrText(car.transmissionTranslations,2),
-      transmissionEng:this.getTrText(car.transmissionTranslations,1)
+      driveTrainGeo:this.getTr(car.driveTrainTranslations,2),
+      driveTrainEng:this.getTr(car.driveTrainTranslations,1),
+      fuelTypeGeo:this.getTr(car.fuelTypeTranslations,2),
+      fuelTypeEng:this.getTr(car.fuelTypeTranslations,1),
+      transmissionGeo:this.getTr(car.transmissionTranslations,2),
+      transmissionEng:this.getTr(car.transmissionTranslations,1)
     }
   }
 
   onSubmit(form: NgForm) {
+    let formData = this.formTranslationModel;
     let formValue = form.value;
     var car: Car = new Car(
       formValue.arrivesIn,
@@ -62,16 +63,16 @@ export class UpdateCarComponent implements OnInit {
       formValue.vinCode,
       formValue.year,
       [
-        new Translation(1, formValue.driveTrainGeo),
-        new Translation(2, formValue.driveTrainEng)
+        new Translation(1, formValue.driveTrainGeo,formData.driveTrainGeo.id),
+        new Translation(2, formValue.driveTrainEng,formData.driveTrainEng.id)
       ],
       [
-        new Translation(1, formValue.fuelTypeGeo),
-        new Translation(2, formValue.fuelTypeEng)
+        new Translation(1, formValue.fuelTypeGeo,formData.fuelTypeGeo.id),
+        new Translation(2, formValue.fuelTypeEng,formData.fuelTypeEng.id)
       ],
       [
-        new Translation(1, formValue.transmissionGeo),
-        new Translation(2, formValue.transmissionEng)
+        new Translation(1, formValue.transmissionGeo,formData.transmissionGeo.id),
+        new Translation(2, formValue.transmissionEng,formData.transmissionEng.id)
       ],
     );
     car.carId = this.currentCarId;
