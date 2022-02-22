@@ -23,6 +23,14 @@ export class ImageService {
     return this.httpClient.post(fullApiUrl, formData, { headers: headers });
   }
 
+  deleteImage(carId:number,imageId:number):any {
+    let fullApiUrl: string = `${environment.serverApiUrl}/api/Image/Delete`;
+    var jwt: string = UserService.logInUser.jwt;
+    let headers = new HttpHeaders({ 'enctype': 'multipart/form-data' })
+      .set('Authorization', `Bearer ${jwt}`)
+    return this.httpClient.post(fullApiUrl,{carId:carId,imageId:imageId},{headers:headers});
+  }
+
   setAsMainImageForCar(imageId: number, carId: number): any {
     let fullApiUrl: string = `${environment.serverApiUrl}/api/Image/SetAsMain`;
     var jwt: string = UserService.logInUser.jwt;

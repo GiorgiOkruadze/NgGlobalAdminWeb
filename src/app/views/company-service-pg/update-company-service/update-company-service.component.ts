@@ -32,24 +32,24 @@ export class UpdateCompanyServiceComponent implements OnInit {
     })
   }
 
-  public getTrText(translations: [], languageId: any): any {
+  public getTr(translations: [], languageId: any): any {
     var currentTr:any =  translations.find((o:any) => o.languageId == languageId);
     
     if(currentTr==null)
       return "";
 
-    return currentTr.text;
+    return currentTr;
   }
 
   
   public generateFormTranslationModel(companyService:any): any {
     this.formTranslationModel = {
-      titleGeo:this.getTrText(companyService.titleTranslations,2),
-      titleEng:this.getTrText(companyService.titleTranslations,1),
-      shortDescGeo:this.getTrText(companyService.shortDescriptionTranslations,2),
-      shortDescEng:this.getTrText(companyService.shortDescriptionTranslations,1),
-      longDescGeo:this.getTrText(companyService.longDescriptionTranslations,2),
-      longDescEng:this.getTrText(companyService.longDescriptionTranslations,1)
+      titleGeo:this.getTr(companyService.titleTranslations,2),
+      titleEng:this.getTr(companyService.titleTranslations,1),
+      shortDescGeo:this.getTr(companyService.shortDescriptionTranslations,2),
+      shortDescEng:this.getTr(companyService.shortDescriptionTranslations,1),
+      longDescGeo:this.getTr(companyService.longDescriptionTranslations,2),
+      longDescEng:this.getTr(companyService.longDescriptionTranslations,1)
     }
   }
 
@@ -69,20 +69,21 @@ export class UpdateCompanyServiceComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
+    var formTranslationData = this.formTranslationModel;
     let formVal:any = form.value;
     var companyService = new CompanyService(
       this.imageBaseLink,
       [
-        new Translation(1,formVal.titleEng),
-        new Translation(2,formVal.titleGeo)
+        new Translation(1,formVal.titleEng,formTranslationData.titleEng.id),
+        new Translation(2,formVal.titleGeo,formTranslationData.titleGeo.id)
       ],
       [
-        new Translation(1,formVal.shortDescEng),
-        new Translation(2,formVal.shortDescGeo)
+        new Translation(1,formVal.shortDescEng,formTranslationData.shortDescEng.id),
+        new Translation(2,formVal.shortDescGeo,formTranslationData.shortDescGeo.id)
       ],
       [
-        new Translation(1,formVal.longDescEng),
-        new Translation(2,formVal.longDescGeo)
+        new Translation(1,formVal.longDescEng,formTranslationData.longDescEng.id),
+        new Translation(2,formVal.longDescGeo,formTranslationData.longDescGeo.id)
       ]
     );
     companyService.id = Number(this.companyServiceId);

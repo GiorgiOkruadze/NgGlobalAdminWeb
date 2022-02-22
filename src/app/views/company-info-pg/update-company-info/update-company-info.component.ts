@@ -30,13 +30,14 @@ export class UpdateCompanyInfoComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
+    var formTranslationData = this.formTranslationModel;
     var formVal = form.value;
     var companyInfo:CompanyInfo = new CompanyInfo(
       formVal.email,
       formVal.phoneNumber,
       [
-        new Translation(2,formVal.addressGeo),
-        new Translation(1,formVal.addressEng)
+        new Translation(2,formVal.addressGeo,formTranslationData.addressGeo.id),
+        new Translation(1,formVal.addressEng,formTranslationData.addressEng.id)
       ],
       formVal.viber,
       formVal.facebook,
@@ -49,20 +50,20 @@ export class UpdateCompanyInfoComponent implements OnInit {
     });
   }
 
-  public getTrText(translations: [], languageId: any): any {
+  public getTr(translations: [], languageId: any): any {
     var currentTr:any =  translations.find((o:any) => o.languageId == languageId);
     
     if(currentTr==null)
       return "";
 
-    return currentTr.text;
+    return currentTr;
   }
 
   
   public generateFormTranslationModel(info:any): any {
     this.formTranslationModel = {
-      addressGeo:this.getTrText(info.addressTranslations,2),
-      addressEng:this.getTrText(info.addressTranslations,1),
+      addressGeo:this.getTr(info.addressTranslations,2),
+      addressEng:this.getTr(info.addressTranslations,1),
     }
   }
 

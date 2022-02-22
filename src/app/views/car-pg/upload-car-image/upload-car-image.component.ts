@@ -50,4 +50,12 @@ export class UploadCarImageComponent implements OnInit {
       }
     })
   }
+
+  onDeleteImageBtnClick(id:number,carId:number){
+    this.imageProxy.deleteImage(carId,id).subscribe((response:any) => {
+      if(response){
+        this.getCurrentCar(this.currentCar.id);
+      }
+    })
+  }
 }

@@ -32,24 +32,24 @@ export class UpdateDailyDatasetComponent implements OnInit {
     })
   }
 
-  public getTrText(translations: [], languageId: any): any {
+  public getTr(translations: [], languageId: any): any {
     var currentTr:any =  translations.find((o:any) => o.languageId == languageId);
     
     if(currentTr==null)
       return "";
 
-    return currentTr.text;
+    return currentTr;
   }
 
   
   public generateFormTranslationModel(dailyDataset:any): any {
     this.formTranslationModel = {
-      titleGeo:this.getTrText(dailyDataset.titleTranslations,2),
-      titleEng:this.getTrText(dailyDataset.titleTranslations,1),
-      shortDescGeo:this.getTrText(dailyDataset.shortDescriptionTranslations,2),
-      shortDescEng:this.getTrText(dailyDataset.shortDescriptionTranslations,1),
-      longDescGeo:this.getTrText(dailyDataset.longDescriptionTranslations,2),
-      longDescEng:this.getTrText(dailyDataset.longDescriptionTranslations,1)
+      titleGeo:this.getTr(dailyDataset.titleTranslations,2),
+      titleEng:this.getTr(dailyDataset.titleTranslations,1),
+      shortDescGeo:this.getTr(dailyDataset.shortDescriptionTranslations,2),
+      shortDescEng:this.getTr(dailyDataset.shortDescriptionTranslations,1),
+      longDescGeo:this.getTr(dailyDataset.longDescriptionTranslations,2),
+      longDescEng:this.getTr(dailyDataset.longDescriptionTranslations,1)
     }
   }
 
@@ -69,20 +69,21 @@ export class UpdateDailyDatasetComponent implements OnInit {
   }
 
   onSubmit(form:NgForm){
+    var formTranslationData=this.formTranslationModel;
     let formVal:any = form.value;
     var dailyDataset = new DailyDataset(
       this.imageBaseLink,
       [
-        new Translation(1,formVal.titleEng),
-        new Translation(2,formVal.titleGeo)
+        new Translation(1,formVal.titleEng,formTranslationData.titleEng.id),
+        new Translation(2,formVal.titleGeo,formTranslationData.titleGeo.id)
       ],
       [
-        new Translation(1,formVal.shortDescEng),
-        new Translation(2,formVal.shortDescGeo)
+        new Translation(1,formVal.shortDescEng,formTranslationData.shortDescEng.id),
+        new Translation(2,formVal.shortDescGeo,formTranslationData.shortDescGeo.id)
       ],
       [
-        new Translation(1,formVal.longDescEng),
-        new Translation(2,formVal.longDescGeo)
+        new Translation(1,formVal.longDescEng,formTranslationData.longDescEng.id),
+        new Translation(2,formVal.longDescGeo,formTranslationData.longDescGeo.id)
       ]
     );
     dailyDataset.id = Number(this.currentDailyDatasetId);
